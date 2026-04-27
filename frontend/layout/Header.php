@@ -34,22 +34,33 @@ if (!($db instanceof PDO)) {
 }
 
 $mega_menu_columns = array_chunk(array_values($category_tree), 3);
+
+$cartCount = 0;
+if (isset($_SESSION['cart']) && is_array($_SESSION['cart'])) {
+    $cartCount = array_sum($_SESSION['cart']);
+}
 ?>
 
 <header>
     <div class="header-top">
         <div class="logo">
-            <a href="/PetsAccessories/puclic/index.php" style="text-decoration: none; color: inherit;">
+            <a href="/PetsAccessories/public/index.php" style="text-decoration: none; color: inherit;">
                 <h1>PetsAccessories</h1>
             </a>
         </div>
         <div class="search-bar">
-            <form action="/search.php" method="GET">
+            <form action="/PetsAccessories/frontend/components/search.php" method="GET">
                 <input type="text" name="q" placeholder="Tìm kiếm nhanh sản phẩm...">
                 <button type="submit">Tìm kiếm</button>
             </form>
         </div>
         <div class="auth-buttons">
+            <div class="cart-icon-container" style="margin-right: 15px; position: relative;">
+                <a href="/PetsAccessories/frontend/components/cart.php" style="text-decoration: none; color: #333; font-weight: bold; font-size: 16px;">
+                    🛒 Giỏ hàng
+                    <span id="cart-count-badge" style="background: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 12px; position: absolute; top: -10px; right: -15px;"><?php echo $cartCount; ?></span>
+                </a>
+            </div>
             <?php if (isset($_SESSION['user_name'])): ?>
                 <div class="user-menu">
                     <button class="btn-profile">Chào, <?php echo htmlspecialchars($_SESSION['user_name']); ?> &#9662;</button>
@@ -104,7 +115,7 @@ $mega_menu_columns = array_chunk(array_values($category_tree), 3);
                                 <div class="mega-group">
                                     <h4>Danh mục đang cập nhật</h4>
                                     <ul>
-                                        <li><a href="/PetsAccessories/puclic/index.php">Quay về trang chủ</a></li>
+                                        <li><a href="/PetsAccessories/public/index.php">Quay về trang chủ</a></li>
                                     </ul>
                                 </div>
                             </div>

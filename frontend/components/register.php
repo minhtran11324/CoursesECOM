@@ -110,7 +110,7 @@ if (!($db instanceof PDO)) {
                     Đã có tài khoản? <a href="/PetsAccessories/frontend/components/login.php">Đăng nhập</a>
                 </p>
                 <p class="index-link">
-                    <a href="/PetsAccessories/puclic/index.php">Quay về trang chủ</a>
+                    <a href="/PetsAccessories/public/index.php">Quay về trang chủ</a>
                 </p>
             </form>
         </div>

@@ -26,7 +26,7 @@
                 p.product_id,
                 p.product_name AS name,
                 COALESCE(NULLIF(p.discount_price, 0), p.price) AS price,
-                COALESCE(NULLIF(p.thumbnail, ''), '/PetsAccessories/puclic/images/default-product.png') AS image
+                COALESCE(NULLIF(p.thumbnail, ''), '/PetsAccessories/public/images/default-product.png') AS image
              FROM products p
              WHERE p.status = 1
              ORDER BY (CASE WHEN p.discount_price > 0 THEN 1 ELSE 0 END) DESC, p.stock_quantity DESC, p.created_at DESC
@@ -39,7 +39,7 @@
                 p.product_id,
                 p.product_name AS name,
                 COALESCE(NULLIF(p.discount_price, 0), p.price) AS price,
-                COALESCE(NULLIF(p.thumbnail, ''), '/PetsAccessories/puclic/images/default-product.png') AS image
+                COALESCE(NULLIF(p.thumbnail, ''), '/PetsAccessories/public/images/default-product.png') AS image
              FROM products p
              WHERE p.status = 1
              ORDER BY p.created_at DESC
@@ -52,7 +52,7 @@
                 p.product_id,
                 p.product_name AS name,
                 p.discount_price AS price,
-                COALESCE(NULLIF(p.thumbnail, ''), '/PetsAccessories/puclic/images/default-product.png') AS image
+                COALESCE(NULLIF(p.thumbnail, ''), '/PetsAccessories/public/images/default-product.png') AS image
              FROM products p
              WHERE p.status = 1
                AND p.discount_price > 0

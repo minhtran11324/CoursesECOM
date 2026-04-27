@@ -28,7 +28,7 @@ if (!($db instanceof PDO)) {
                 $_SESSION['user_name'] = !empty($user['fullname']) ? $user['fullname'] : $user['username'];
                 
                 // Đăng nhập thành công -> Về trang chủ
-                header("Location: /PetsAccessories/puclic/index.php");
+                header("Location: /PetsAccessories/public/index.php");
                 exit;
             } else {
                 $error = "Tài khoản hoặc mật khẩu không chính xác!";
@@ -74,7 +74,7 @@ if (!($db instanceof PDO)) {
                 Chưa có tài khoản? <a href="/PetsAccessories/frontend/components/register.php">Đăng ký ngay</a>
             </p>
             <p class="index-link">
-                <a href="/PetsAccessories/puclic/index.php">Quay về trang chủ</a>
+                <a href="/PetsAccessories/public/index.php">Quay về trang chủ</a>
             </p>
         </form>
     </div>

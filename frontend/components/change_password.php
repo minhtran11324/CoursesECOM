@@ -102,7 +102,7 @@ if (!($db instanceof PDO)) {
             <button type="submit" class="btn-auth">Cập nhật mật khẩu</button>
 
             <p class="index-link">
-                <a href="/PetsAccessories/puclic/index.php">Quay về trang chủ</a>
+                <a href="/PetsAccessories/public/index.php">Quay về trang chủ</a>
             </p>
         </form>
     </div>

@@ -31,7 +31,7 @@ if (!($db instanceof PDO)) {
                         p.product_id,
                         p.product_name AS name,
                         COALESCE(NULLIF(p.discount_price, 0), p.price) AS price,
-                        COALESCE(NULLIF(p.thumbnail, ""), "/PetsAccessories/puclic/images/default-product.png") AS image
+                        COALESCE(NULLIF(p.thumbnail, ""), "/PetsAccessories/public/images/default-product.png") AS image
                      FROM products p
                      WHERE p.status = 1
                        AND p.category_id IN (
