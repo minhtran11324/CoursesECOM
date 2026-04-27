@@ -1,0 +1,658 @@
+/* Reset margin & padding cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Container chính */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ---------------------------------
+   1. Header & Navigation Component
+------------------------------------ */
+header {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo h1 {
+    color: #ff6f61; /* Màu cam nhạt nổi bật cho cửa hàng thú cưng */
+    font-size: 24px;
+}
+
+.search-bar form {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px 0 0 20px;
+    width: 300px;
+    outline: none;
+}
+
+.search-bar input:focus {
+    border-color: #ff6f61;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    border: none;
+    background: #ff6f61;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 0 20px 20px 0;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.search-bar button:hover {
+    background: #e65c50;
+}
+
+/* Nút Đăng nhập / Đăng ký */
+.auth-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.auth-buttons form {
+    margin: 0;
+}
+
+.btn-login, .btn-register {
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.btn-login {
+    background-color: transparent;
+    color: #ff6f61;
+    border: 2px solid #ff6f61;
+}
+
+.btn-login:hover {
+    background-color: #ff6f61;
+    color: #fff;
+}
+
+.btn-register {
+    background-color: #ff6f61;
+    color: #fff;
+    border: 2px solid #ff6f61;
+}
+
+.btn-register:hover {
+    background-color: #e65c50;
+    border-color: #e65c50;
+}
+
+/* User Menu & Dropdown */
+.user-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.btn-profile {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    padding: 10px 15px;
+    transition: color 0.3s;
+}
+
+.btn-profile:hover {
+    color: #ff6f61;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    min-width: 150px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: #ff6f61;
+}
+
+.dropdown-content .logout-link {
+    color: #c0392b;
+    border-top: 1px solid #eee;
+}
+
+.dropdown-content .logout-link:hover {
+    background-color: #fadbd8;
+    color: #c0392b;
+}
+
+.user-menu:hover .dropdown-content {
+    display: block;
+}
+
+/* ---------------------------------
+   2. Banner Slider Component
+------------------------------------ */
+.banner-slider {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.banner-item {
+    position: relative;
+    height: 350px;
+    background-color: #ddd; /* Placeholder màu nền nếu ảnh lỗi */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-text {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background: rgba(255, 111, 97, 0.85);
+    color: white;
+    padding: 15px 25px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+/* ---------------------------------
+   3. Products (Grid & Cards) Component
+------------------------------------ */
+.product-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.product-section h2 {
+    margin-bottom: 25px;
+    font-size: 26px;
+    color: #222;
+    border-left: 5px solid #ff6f61;
+    padding-left: 10px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.product-image {
+    height: 200px;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.product-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-info h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.price {
+    color: #e44d26;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.btn-add-cart {
+    margin-top: auto;
+    padding: 12px;
+    background: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-add-cart:hover {
+    background: #e65c50;
+}
+
+/* ---------------------------------
+   4. News & Promotion Component
+------------------------------------ */
+.news-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+.news-section h2 {
+    margin-bottom: 25px;
+    font-size: 26px;
+    color: #222;
+    text-align: center;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.news-item {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.news-item h3 {
+    color: #ff6f61;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.news-item p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.news-item a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.news-item a:hover {
+    text-decoration: underline;
+}
+
+/* ---------------------------------
+   5. Footer Component
+------------------------------------ */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 40px 20px 10px;
+}
+
+/* ---------------------------------
+   6. Authentication Pages (Login & Register)
+------------------------------------ */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.auth-box {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 450px;
+}
+
+.auth-box h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.auth-form .form-group {
+    margin-bottom: 20px;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+    font-size: 14px;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.auth-form input:focus {
+    border-color: #ff6f61;
+}
+
+.btn-auth {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-auth:hover {
+    background-color: #e65c50;
+}
+
+.auth-links {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.auth-links a {
+    color: #ff6f61;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+.index-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.index-link a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.index-link a:hover {
+    color: #ff6f61;
+    text-decoration: underline;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.about-us, .contact-info {
+    flex: 1;
+    min-width: 300px;
+    margin-bottom: 20px;
+}
+
+.about-us h4, .contact-info h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #ff6f61;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #555;
+    padding-top: 15px;
+    font-size: 14px;
+    color: #bbb;
+}
+
+/* ---------------------------------
+   7. Mega Menu Navigation
+------------------------------------ */
+header {
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+    gap: 15px;
+}
+
+.primary-nav {
+    background-color: #2e53a2;
+    width: 100%;
+}
+
+.primary-menu {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 1200px;
+    align-items: center;
+}
+
+.primary-menu > li {
+    position: static;
+}
+
+.primary-menu > li > a {
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.primary-menu > li:hover > a {
+    color: #fca311;
+    border-bottom: 2px solid #fff;
+}
+
+.mega-dropdown {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 2000;
+    border-top: 3px solid #fca311;
+}
+
+.has-mega:hover .mega-dropdown {
+    display: block;
+}
+
+.mega-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 15px;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.mega-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.mega-group h4 {
+    font-size: 16px;
+    color: #1a365d;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.mega-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mega-group ul li {
+    margin-bottom: 12px;
+}
+
+.mega-group ul li a {
+    color: #4a5568;
+    text-decoration: none;
+    font-size: 14.5px;
+    transition: color 0.2s;
+}
+
+.mega-group ul li a:hover {
+    color: #fca311;
+}
+
+/* Responsive cơ bản */
+@media (max-width: 1024px) {
+    .primary-menu {
+        overflow-x: auto;
+        justify-content: flex-start;
+    }
+
+    .primary-menu > li > a {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-bar input {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .search-bar form {
+        width: 100%;
+    }
+
+    .mega-inner {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 15px;
+    }
+
+    .auth-buttons {
+        justify-content: flex-end;
+    }
+}
