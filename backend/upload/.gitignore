@@ -1,0 +1,7 @@
+# Bỏ qua tất cả file trong thư mục upload
+/backend/upload/avatar/*
+/backend/upload/imgProduct/*
+
+# NHƯNG không bỏ qua file .gitkeep (để giữ lại cấu trúc thư mục trên Git)
+!/backend/upload/avatar/.gitkeep
+!/backend/upload/imgProduct/.gitkeep
