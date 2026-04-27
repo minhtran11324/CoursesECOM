@@ -1,1 +1,1 @@
-coursesECOM is a e-commercial which selling online courses about IT field such as Web Development Fundamental
+PetsAccessories is a website e-commercial that selling accessories and foods for pets such as dog & cat food, sand for pets, and also include several services for them. 
